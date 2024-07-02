@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? <u><font color='#0000FF'>Sign Up</font></u></string>
+    <string name="forgot_password"><u><font color='#0000FF'>Forgot Password?</font></u></string>
+</resources>

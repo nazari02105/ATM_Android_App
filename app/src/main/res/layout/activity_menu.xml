@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu"
+    android:background="@drawable/my_gradient_drawable">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/qr_base" />
+
+    <ImageView
+        android:id="@+id/depositBank"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/left_sign" />
+
+    <TextView
+        android:id="@+id/depositBankText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/depositBank"
+        android:layout_alignBottom="@+id/depositBank"
+        android:layout_toEndOf="@id/depositBank"
+        android:layout_toRightOf="@id/depositBank"
+        android:gravity="center_vertical"
+        android:text="انتقال پول به بانک"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@id/stock"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/left_sign" />
+
+    <TextView
+        android:id="@+id/stockText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/stock"
+        android:layout_alignBottom="@+id/stock"
+        android:layout_toEndOf="@id/stock"
+        android:layout_toRightOf="@id/stock"
+        android:gravity="center_vertical"
+        android:text="موجودی"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/installmentPayment"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/left_sign" />
+
+    <TextView
+        android:id="@+id/installmentPaymentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/installmentPayment"
+        android:layout_alignBottom="@+id/installmentPayment"
+        android:layout_toEndOf="@id/installmentPayment"
+        android:layout_toRightOf="@id/installmentPayment"
+        android:gravity="center_vertical"
+        android:text="پرداخت قسط"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/depositPlayer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/right_sign" />
+
+    <TextView
+        android:id="@+id/depositPlayerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/depositPlayer"
+        android:layout_alignBottom="@+id/depositPlayer"
+        android:layout_toStartOf="@id/depositPlayer"
+        android:layout_toLeftOf="@id/depositPlayer"
+        android:gravity="center_vertical"
+        android:text="انتقال پول به کاربر"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/receiveLoan"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/right_sign" />
+
+    <TextView
+        android:id="@+id/receiveLoanText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/receiveLoan"
+        android:layout_alignBottom="@+id/receiveLoan"
+        android:layout_toStartOf="@id/receiveLoan"
+        android:layout_toLeftOf="@id/receiveLoan"
+        android:gravity="center_vertical"
+        android:text="دریافت وام"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/exit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/right_sign" />
+
+    <TextView
+        android:id="@+id/exitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/exit"
+        android:layout_alignBottom="@+id/exit"
+        android:layout_toStartOf="@id/exit"
+        android:layout_toLeftOf="@id/exit"
+        android:gravity="center_vertical"
+        android:text="خروج"
+        android:textSize="18dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
