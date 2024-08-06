@@ -17,6 +17,10 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
 public class PayLoan extends AppCompatActivity {
 
     Button backBtn;
@@ -25,6 +29,12 @@ public class PayLoan extends AppCompatActivity {
 
     private ExecutorService executorService;
     private Handler mainHandler;
+
+    private String formatPrice(String price) throws ParseException {
+        NumberFormat numberFormat = NumberFormat.getNumberInstance(Locale.US);
+        Number number = numberFormat.parse(price);
+        return numberFormat.format(number);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +62,13 @@ public class PayLoan extends AppCompatActivity {
                             TableRow row = new TableRow(PayLoan.this);
 
                             TextView amount = new TextView(PayLoan.this);
-                            amount.setText(String.valueOf(loan.getLoanAmount()));
+                            String price = String.valueOf(loan.getLoanAmount());
+                            try {
+                                String formattedPrice = formatPrice(price);
+                                amount.setText(formattedPrice);
+                            } catch (ParseException e) {
+                                System.out.println("Error");
+                            }
                             amount.setPadding(8, 8, 8, 8);
 
                             TextView period = new TextView(PayLoan.this);

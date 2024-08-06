@@ -39,7 +39,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.EnumMap;
 import java.util.Map;
-import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -69,7 +68,14 @@ public class MainActivity extends AppCompatActivity {
         editTextFilename = findViewById(R.id.editText_filename);
         editTextPassword = findViewById(R.id.editText_password);
 
-        buttonGenerateQR.setOnClickListener(v -> generateQRCode(getSaltString()));
+        buttonGenerateQR.setOnClickListener(v -> {
+            String filename = editTextFilename.getText().toString();
+            if (!filename.isEmpty()) {
+                generateQRCode(filename);
+            } else {
+                Toast.makeText(this, "Please enter a filename", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         buttonSaveQR.setOnClickListener(v -> {
             if (generatedBitmap != null) {
@@ -93,18 +99,6 @@ public class MainActivity extends AppCompatActivity {
         buttonReadQR.setOnClickListener(v -> openImageSelector());
 
         requestPermissions();
-    }
-
-    private String getSaltString() {
-        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < 18) {
-            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
-        }
-        String saltStr = salt.toString();
-        return saltStr;
     }
 
     private void generateQRCode(String text) {
